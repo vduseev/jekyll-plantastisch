@@ -57,11 +57,9 @@ Now, it's time to create a diagram, in your Jekyll blog page:
 
 ```
 {% plantuml %}
+@startuml
 [First] - [Second]
+@enduml
 {% endplantuml %}
 ```
-
-Check [this blog post](http://www.yegor256.com/2014/06/01/aop-aspectj-java-method-logging.html).
-UML sequence diagram in this page is generated with this plugin.
-Blog sources are available in [Github](https://github.com/yegor256/blog).
 
