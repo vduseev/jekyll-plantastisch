@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/jekyll-plantuml.svg)](http://badge.fury.io/rb/jekyll-plantuml)
+[![Gem Version](https://badge.fury.io/rb/jekyll-plantastisch.svg)](https://badge.fury.io/rb/jekyll-plantastisch)
 
 ## Install Jekyll plugin
 
