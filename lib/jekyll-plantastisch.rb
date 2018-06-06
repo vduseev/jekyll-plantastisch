@@ -42,9 +42,7 @@ module Jekyll
         else
           FileUtils.mkdir_p(File.dirname(uml))
           File.open(uml, 'w') { |f|
-            f.write("@startuml\n")
             f.write(super)
-            f.write("\n@enduml")
           }
           system("plantuml -tsvg #{uml}")
           site.static_files << Jekyll::StaticFile.new(
