@@ -1,5 +1,29 @@
 [![Gem Version](https://badge.fury.io/rb/jekyll-plantastisch.svg)](https://badge.fury.io/rb/jekyll-plantastisch)
 
+# Jekyll Plantastisch
+> "Ein fantastischer PlantUML plugin!"
+
+`jekyll-plantastisch` is a PlantUML jekyll plugin with several 
+distinguishable features:
+
+- It uses `<object>` html tag instead of `<img>` tag, when embedding 
+  rendered diagrams on page. 
+
+  This allows you to use interactive SVG 
+  diagrams with links (see [PlantUML docs on this][plantuml_links]).
+
+- It requires you to put `@startuml` and `@enduml` tags into the
+  source of your diagram instead of forcibly inserting them. 
+
+  This enables you to store the diagram's source in a completely
+  separate file in `_includes` directory and reuse it in several
+  places, while simply embedding it, when required:
+  ```jekyll
+  {% plantuml %}
+  {% include diagram.uml %}
+  {% endplantuml %}
+  ```
+
 ## Install Jekyll plugin
 
 Install it first:
@@ -63,3 +87,4 @@ Now, it's time to create a diagram, in your Jekyll blog page:
 {% endplantuml %}
 ```
 
+[plantuml_links]: http://plantuml.com/link
