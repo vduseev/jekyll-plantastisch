@@ -3,7 +3,9 @@
 # Jekyll Plantastisch
 > "Ein fantastischer PlantUML plugin!"
 
-`jekyll-plantastisch` is a PlantUML jekyll plugin with several 
+## Description
+
+`jekyll-plantastisch` is a **PlantUML** Jekyll plugin with several 
 distinguishable features:
 
 - It uses `<object>` html tag instead of `<img>` tag, when embedding 
@@ -15,45 +17,102 @@ distinguishable features:
 - It requires you to put `@startuml` and `@enduml` tags into the
   source of your diagram instead of forcibly inserting them. 
 
-  This enables you to store the diagram's source in a completely
-  separate file in `_includes` directory and reuse it in several
-  places, while simply embedding it, when required:
-  ```jekyll
-  {% plantuml %}
-  {% include diagram.uml %}
-  {% endplantuml %}
-  ```
+  This was an issue with `jekyll-plantuml` plugin, because it
+  automatically adds these keywords to any content wrapped in a
+  `{% plantuml %}` tag.
 
-## Install Jekyll plugin
+  Not having this enables you to store the diagram's source in a completely
+  separate file in `_includes` directory and reuse it in several
+  places, while simply embedding it, when required.
+
+## Usage
+
+<table style="width:100%">
+  <tr>
+    <th>Source</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>
+```jekyll
+{% plantuml %}
+@startuml
+class "[[https://www.nypl.org/ Foo]]" as foo
+note left of foo
+  This is <u>riabrary</u>
+  This is [[https://github.com link]]
+end note
+@enduml
+{% endplantuml %}
+```
+    </td>
+    <td>
+      <img src="https://image.ibb.co/dbzvf8/jekyll_plantastisch_output.jpg">
+    </td>
+  </tr>
+  <tr>
+    <td>
+```jekyll
+{% plantuml %}
+{% include diagram.uml %}
+{% endplantuml %}
+```
+    </td>
+    <td>
+      <img src="https://image.ibb.co/dbzvf8/jekyll_plantastisch_output.jpg">
+    </td>
+  </tr>
+</table>
+
+`WARNING`: this plugin is not compatible with **Github Pages**, because it's
+a custom plugin and it is not included into the default `github-pages`
+bundle.
+If you want to use this plugin with GitHub Pages you will need to generate
+the `_site` directory locally and push its contents to GitHub rather than
+pushing website sources to GitHub to have it build and render them for you.
+
+## Installation
+
+### Jekyll `3.7` and above
+
+Add this line to your `Gemfile` to the `group :jekyll_plugins do` section.
+```ruby
+group :jekyll_plugins do
+  gem "jekyll-plantastisch"
+end
+```
+
+Add plugin to the `_config.yml`
+```yaml
+plugins:
+  - jekyll-plantastisch
+```
+
+Run `bundle install` or `bundle update`
+```console
+bundle install
+```
+
+### Previous versions
 
 Install it first:
-
-```
-gem install jekyll-plantuml
+```console
+gem install jekyll-plantastisch
 ```
 
 With Jekyll 2, simply add the gem to your `_config.yml` gems list:
-
 ```yaml
-gems: ['jekyll-plantuml', ... your other plugins]
+gems: ['jekyll-plantastisch', ... your other plugins]
 ```
 
 Or for previous versions,
 create a plugin file within your Jekyll project's `_plugins` directory:
-
 ```ruby
 # _plugins/plantuml-plugin.rb
-require "jekyll-plantuml"
+require "jekyll-plantastisch"
 ```
 
-Highly recommend to use Bundler. If you're using it, add this line
-to your `Gemfile`:
-
-```
-gem "jekyll-plantuml"
-```
-
-## Install plantuml.jar
+## Installing plantuml.jar
 
 Then, make sure [PlantUML](http://plantuml.sourceforge.net/download.html)
 is installed on your build machine, and can
