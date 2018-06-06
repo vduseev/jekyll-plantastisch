@@ -29,37 +29,37 @@ distinguishable features:
 
 <table style="width:100%">
   <tr>
-    <th>Source</th>
-    <th>Result</th>
+    <th>Example</th>
+    <th>Output</th>
   </tr>
   <tr>
     <td>
-```jekyll
+<pre>
 {% plantuml %}
 @startuml
 class "[[https://www.nypl.org/ Foo]]" as foo
 note left of foo
   This is <u>riabrary</u>
   This is [[https://github.com link]]
+  <img:https://image.ibb.co/e6KstT/thislibrarrrr.jpg>
 end note
 @enduml
-{% endplantuml %}
-```
+</pre>
     </td>
     <td>
-      <img src="https://image.ibb.co/dbzvf8/jekyll_plantastisch_output.jpg">
+      <img src="https://image.ibb.co/fz60f8/jekyll_plantastisch_output.jpg">
     </td>
   </tr>
   <tr>
     <td>
-```jekyll
+<pre>
 {% plantuml %}
 {% include diagram.uml %}
 {% endplantuml %}
-```
+</pre>
     </td>
     <td>
-      <img src="https://image.ibb.co/dbzvf8/jekyll_plantastisch_output.jpg">
+      <img src="https://image.ibb.co/fz60f8/jekyll_plantastisch_output.jpg">
     </td>
   </tr>
 </table>
