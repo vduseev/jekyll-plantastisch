@@ -9,14 +9,14 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.rubygems_version = '2.2.2'
   s.required_ruby_version = '>= 1.9.3'
-  s.name = 'jekyll-plantuml'
+  s.name = 'jekyll-plantastisch'
   s.version = PlantUML::VERSION
   s.license = 'MIT'
-  s.summary = "Jekyll PlantUML Automation"
+  s.summary = "Configurable Jekyll PlantUML Tag"
   s.description = "PlantUML diagrams in Jekyll pages"
-  s.authors = ["Yegor Bugayenko"]
-  s.email = 'yegor@tpc2.com'
-  s.homepage = 'http://github.com/yegor256/jekyll-plantuml'
+  s.authors = ["Vagiz Duseev", "Yegor Bugayenko"]
+  s.email = 'vagiz@duseev.com'
+  s.homepage = 'http://github.com/vduseev/jekyll-plantastisch'
   s.files = `git ls-files`.split($/)
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
